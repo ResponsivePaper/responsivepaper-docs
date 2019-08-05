@@ -1,1 +1,0 @@
-# responsivepaper-docs
