@@ -1,6 +1,5 @@
-<h1>Getting Started</h1>
+# Getting Started
 
-{{#markdown}}
 Building reports using Responsive Paper is simple and intuitive. Responsive Paper is an online service which converts
 html or url's and returns a pdf file.
 
@@ -21,6 +20,3 @@ The chrome extension will allow you to auto preview your html based pdf reports.
 Take a look at the tutorials or examples and test the pdf generation.
 
 Please review the deployment section to integrate your reports into your server side technology.
-
-
-{{/markdown}}

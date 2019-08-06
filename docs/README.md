@@ -1,6 +1,5 @@
-<h1>Introduction</h1>
+# Introduction
 
-{{#markdown}}
 Responsive Paper is a revolutionary way to design and build pdf reports using pure html, javascript and css. No more
 SSRS, Crystal Reports and all the frustrating limitations that those
 frameworks provide. Test
@@ -19,4 +18,3 @@ frameworks provide. Test
 * Screen or print media type
 * Webfont support
 * Debug logs
-{{/markdown}}
