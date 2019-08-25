@@ -18,6 +18,8 @@ The following paper sizes are supported:
 - a5
 - a6
 
+If you want landscape orientation then you should append "-ls" to the class name.
+
 ## rp-page-header
 
 Use the rp-page-header class to make an HTML element print at the top of each page

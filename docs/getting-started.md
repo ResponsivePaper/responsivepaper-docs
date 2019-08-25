@@ -15,6 +15,10 @@ The chrome extension will allow you to auto preview your html based pdf reports.
 
 ### Enter your API key in the chrome extension
 
+### Install tunnelme for design time testing
+
+IMPORTANT: Be sure to use https:// for tunnelme urls to ensure images are loaded correctly
+
 ### Build your first reports
 
 Take a look at the tutorials or examples and test the pdf generation.
