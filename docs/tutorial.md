@@ -32,6 +32,8 @@ Clone the [Responsive Paper Examples repository](https://github.com/responsivepa
 
 ```
 
+Copy the responsive-paper.settings.template.js to responsive-paper.settings.js, open it in your editor, update the tunnelHostName and apiKey values.
+
 Open a terminal window and install run the following command:
 
 ```
