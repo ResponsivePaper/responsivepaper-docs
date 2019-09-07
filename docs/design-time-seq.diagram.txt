@@ -1,0 +1,13 @@
+title Responsive Paper Design Time PDF Generation
+
+Chrome Browser->Local Web Server: Report Request
+Local Web Server->Chrome Browser: HTML (including rp.designer.js)
+Chrome Browser->Chrome Browser: Injects designer css
+Chrome Browser->Responsive Paper PDF Service: POST localtunnel url,options for pdf preview
+Responsive Paper PDF Service->localtunnel.me Server: url
+localtunnel.me Server->Local Web Server: GET proxied local url
+Local Web Server->localtunnel.me Server: Report HTML
+localtunnel.me Server->Responsive Paper PDF Service: Report HTML
+Responsive Paper PDF Service->Responsive Paper PDF Service: Generate PDF
+Responsive Paper PDF Service->Chrome Browser: PDF preview to new tab
+

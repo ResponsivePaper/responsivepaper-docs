@@ -1,0 +1,11 @@
+title Responsive Paper Production PDF Generation
+
+User Browser->Deployment Web Server: Report Request
+Deployment Web Server->Responsive Paper PDF Service: POST /convert/?url=[url]&token=[token]
+Responsive Paper PDF Service->Deployment Web Server: GET url?token=[token]
+Deployment Web Server->Deployment Web Server: Authorize request (e.g. one time use token)
+Deployment Web Server->Responsive Paper PDF Service: Report HTML
+Responsive Paper PDF Service->Responsive Paper PDF Service: Generate PDF
+Responsive Paper PDF Service->Deployment Web Server: Return PDF
+Deployment Web Server-> User Browser: Return PDF
+
