@@ -10,6 +10,7 @@ frameworks provide.
 * Design once for multiple pdf paper sizes
 * Many common formats supported (Letter, Legal, A6, A5, A4, A3, etc)
 * Portrait or landscape orientaion
+* Use different page formats and orientations in the same pdf
 * Page numbering
 * Page number links (e.g. Table of Contents, Indexes)
 * Page headers

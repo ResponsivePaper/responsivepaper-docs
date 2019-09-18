@@ -5,22 +5,25 @@ html or url's and returns a pdf file.
 
 ### Create a log in and generate a free developer api key
 
-An api key is required to do html to pdf conversion while you are developing locally.
-
-### Install the Responsive Paper chrome extension
-
-Responsive Paper uses the latest version of chrome to generate pdfs. To get accurate results, it is recommended to
-install google chrome and google chrome extension. Get it here.
-The chrome extension will allow you to auto preview your html based pdf reports.
-
-### Enter your API key in the chrome extension
+An api key is required to do html to pdf conversion while you are developing locally.  To get an api key, goto the [sign up](https://responsivepaper.com/user/signup) page and enter your name, email and password and you will be redirected to your [dashboard](https://responsivepaper.com/user/dashboard) where you can view your api key
 
 ### Install tunnelme for design time testing
 
+Your HTML reports are converted to PDF's using the responsivepaper.com service. In order to test the HTML conversion while you are developing locally you can open a tunnel to your local development server using the [localtunnel.me](https://github.com/localtunnel/localtunnel) service:
+
+```
+npm install -g localtunnel
+```
+
+then if you are running a local dev server on port 8080:
+
+```
+lt --port 8080
+```
+
 IMPORTANT: Be sure to use https:// for tunnelme urls to ensure images are loaded correctly
 
-### Build your first reports
+### Next Steps
 
-Take a look at the tutorials or examples and test the pdf generation.
+Learn more by cloning the [examples github repository](https://github.com/ResponsivePaper/responsivepaper-examples) and stepping through the [tutorial](/tutorial).
 
-Please review the deployment section to integrate your reports into your server side technology.

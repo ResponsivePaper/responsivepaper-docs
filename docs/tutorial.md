@@ -2,48 +2,95 @@
 
 This tutorial will guide you through building a simple catalog report. Concepts covered include:
 
+* Changing paper sizes and orientation
 * Page headers
 * Force Page breaks
 * Page numbering
+* Fetching dynamic content and debug logs
 * Group headers
 * Table of Contents
-* Canvas support for js rendering libraries
-* Changing paper sizes and orientation
-* Debug logs
+* Cover page (full page)
 
 ## Development Environment
 
-The Responsive Paper Service (RPS) uses headless chrome server side so it is advised to develop your reports using google chrome.  You will also need a development server installed such as http-server (npm http-server).
+Follow the steps in the [Getting Started](/getting-started) section to get an api key and install the localtunnel.me app. The Responsive Paper Service (RPS) uses headless chrome server side so it is advised to develop your reports using google chrome or the brave browser.  You will also need a development server installed such as live-server (npm live-server).
 
 ```
-npm install http-server -g
-http-server
-
+npm install live-server -g
 ```
 
-## Initial HTML Template
+## Initial Configuration
 
-Clone the [Responsive Paper Examples repository](https://github.com/responsivepaper/examples) or make a copy of the starter template [index-01.html](https://github.com/responsivepaper/examples/tutorial/index-01.html) and the example [data.json](https://github.com/responsivepaper/examples/tutorial/data.json) .  This includes a link to the responsive-paper.designer.css file to help in building the layout for your reports.  It also has div element which has the rp-page and rp-ps-letter classes. The rp-page class identifies the content to be parsed into pdf pages and the optional rp-ps-letter class which sets the page size and orientation.
+Open a git bash and clone the [Responsive Paper Examples repository](https://github.com/responsivepaper/examples):
+
+```
+mkdir responsivepaper
+cd responsivepaper
+git clone https://github.com/responsivepaper/examples
+cd examples
+```
+
+Copy of the responsive-paper.settings-template.js to responsive-paper.settings.js:
+
+```
+cp responsive-paper.settings-template.js responsive-paper.settings.js
+```
+
+## Start up the servers
+
+Start up a local web server
+
+```
+live-server
+```
+
+Make note of the port, switch to a new terminal and start up a new localtunnel.me tunnel (replace the port with the one where live-server is running):
+```
+lt --port 8080
+```
+
+## Update your local configuration
+
+Open the responsive-paper.settings.js file in your favorite editor and update it with your tunnelHostUrl created by the lt command entered above.  Also update your apikey and save the file.  NOTE: If you restart your local web server or tunnel you made need to update the tunnelHostUrl if the url changes.
+
+## Step 1 - Initial page layout
+In your web browser navigate to http://127.0.0.1:8080/tutorial/index-01.html
+
+Open the /tutorial/index-01.html file in your editor.
+
+
+The index-01.html includes a div element which has the rp-page and rp-ps-letter classes. The rp-page class identifies the content to be parsed into pdf pages and the optional rp-ps-letter class which sets the page size and orientation.  See the [paper size](/css-reference?id=rp-ps-paper-size-and-orientation) section of the css reference for more info on paper sizes.
 
 ```
     <div class="rp-page rp-ps-letter" id="rpReport">
-        Hello World
+        <img class="logo" src='images/logo.png' />
+        <p>Catalog Report</p>
     </div>
 
 ```
 
-Copy the responsive-paper.settings.template.js to responsive-paper.settings.js, open it in your editor, update the tunnelHostName and apiKey values.
+The index-01.html includes a link to the responsive-paper.designer.js file which automatically adds design time css and previews the current page to help in building the layout for your reports.
 
-Open a terminal window and install run the following command:
+### Set up automatic previewing of the html page
+
+Open responsive-paper.settings.js and update the following to "true":
 
 ```
-http-server
+  //...
+  applyResponsivePaperCss: true,
+  autoPreview: true,
+  includeConsole: true,
+  //...
 ```
 
-Open chrome and navigate to the testing url (e.g. http://localhost:8080/tutorial/index-01.html)
+Save the file and you should see an html preview in the browser tab and a pdf preview open in a new tab.
 
-Verify that you have followed the instructions in the [Getting Started](/#/getting-started) section and select the "Preview pdf" from the Responsive Paper chrome extension menu.
+Try changing the paper size and layout by updating the index-01.html:
 
-If everything works you should see a pdf open in a new tab with the text "Hello World".
+```
+    <div class="rp-page rp-ps-letter-ls" id="rpReport">
 
-##
+```
+
+Saving index-01.html will automatically update the html and pdf previews.
+
