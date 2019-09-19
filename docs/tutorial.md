@@ -3,21 +3,14 @@
 This tutorial will guide you through building a simple catalog report. Concepts covered include:
 
 * Changing paper sizes and orientation
-* Page headers
-* Force Page breaks
+* Page headers and footers
+* Page breaks
 * Page numbering
-* Fetching dynamic content and debug logs
 * Group headers
 * Table of Contents
 * Cover page (full page)
+* Fetching dynamic content and debug logs
 
-## Development Environment
-
-Follow the steps in the [Getting Started](/getting-started) section to get an api key and install the localtunnel.me app. The Responsive Paper Service (RPS) uses headless chrome server side so it is advised to develop your reports using google chrome or the brave browser.  You will also need a development server installed such as live-server (npm live-server).
-
-```
-npm install live-server -g
-```
 
 ## Initial Configuration
 
@@ -38,7 +31,7 @@ cp responsive-paper.settings-template.js responsive-paper.settings.js
 
 ## Start up the servers
 
-Start up a local web server
+Start up a local web server (see [getting started](/getting-started) for install instructions)
 
 ```
 live-server
@@ -48,6 +41,9 @@ Make note of the port, switch to a new terminal and start up a new localtunnel.m
 ```
 lt --port 8080
 ```
+
+Now your local dev server is accessible by the outside world, including the responsivepaper.com rendering service.
+
 
 ## Update your local configuration
 
@@ -79,7 +75,6 @@ Open responsive-paper.settings.js and update the following to "true":
   //...
   applyResponsivePaperCss: true,
   autoPreview: true,
-  includeConsole: true,
   //...
 ```
 
