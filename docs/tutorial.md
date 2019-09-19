@@ -94,3 +94,26 @@ Try changing the paper size and layout by updating the index-01.html:
 
 Saving index-01.html will automatically update the html and pdf previews.
 
+## Step 2 - Page Headers and Page Breaks
+
+?> TIP: You can see the completed step 2 at /tutorial/index-02.html
+
+Replace the content inside the div.rp-page with this content and save the file:
+
+```
+        <div class="rp-page-header">
+            <img class="logo" src='images/logo.png' />
+            <p>Catalog Report</p>
+        </div>
+        <p>First page content</p>
+        <div class="rp-force-page-break"></div>
+        <p>Second page content</p>
+```
+
+Now compare the rendered html to the pdf.  Notice the page break is rendered as a red bar in the designer view but it generates an actual page break in the rendered pdf. Also the logo and report header are rendered on both pages because they are contained in the div.rp-page-header element.
+
+Try adding the rp-ps-letter-ls to the div.rp-page-break element to cause the rendering engine to switch between page layouts and create a multi format pdf:
+
+```
+        <div class="rp-force-page-break rp-ps-letter-ls"></div>
+```
