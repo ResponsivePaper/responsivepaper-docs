@@ -94,7 +94,7 @@ Try changing the paper size and layout by updating the index-01.html:
 
 Saving index-01.html will automatically update the html and pdf previews.
 
-## Step 2 - Page Headers and Page Breaks
+## Step 2 - Page Headers, Footers and Page Breaks
 
 ?> TIP: You can see the completed step 2 at /tutorial/index-02.html
 
@@ -108,12 +108,33 @@ Replace the content inside the div.rp-page with this content and save the file:
         <p>First page content</p>
         <div class="rp-force-page-break"></div>
         <p>Second page content</p>
+        <div class="rp-page-footer">
+            <div>&copy; 2019 example.com, all rights reserved</div>
+        </div>
 ```
 
-Now compare the rendered html to the pdf.  Notice the page break is rendered as a red bar in the designer view but it generates an actual page break in the rendered pdf. Also the logo and report header are rendered on both pages because they are contained in the div.rp-page-header element.
+Now compare the rendered html to the pdf.  Notice the page break is rendered as a red bar in the designer view but it generates an actual page break in the rendered pdf. Also the logo and report header are rendered on both pages because they are contained in the div.rp-page-header element. The div.rp-page-footer section is aligned to the bottom of the page.
 
 Try adding the rp-ps-letter-ls to the div.rp-page-break element to cause the rendering engine to switch between page layouts and create a multi format pdf:
 
 ```
         <div class="rp-force-page-break rp-ps-letter-ls"></div>
 ```
+
+?> TIP: The designer css doesn't properly display different page sizes and orientations. For testing set the paper size on the top level rp-page element to test sections of your reports in alternative formats.
+
+?> TIP: Have your users use Adobe Reader for printing pdf files with different page sizes so that the paper is automatically selected from the correct paper tray.  This is not necessary if you are just switching orientation in your reports (e.g. rp-ps-letter and rp-ps-letter-ls)
+
+## Step 3 - Page Numbering
+
+?> TIP: You can see the completed step 3 at /tutorial/index-03.html
+
+Replace the html inside the div.rp-page-footer element with the following:
+
+```
+            <div style="float: right">Page <span class='rp-page-number'>999</span> of <span
+                    class='rp-page-count'>1000</span></div>
+
+```
+
+Take a look at the html page and notice the page number and count are 999 and 1000, however in the pdf preview the number and count are updated to reflect the actual page and page count.
