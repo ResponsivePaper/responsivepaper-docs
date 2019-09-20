@@ -133,3 +133,66 @@ Replace the html inside the div.rp-page-footer element with the following:
 ```
 
 Take a look at the html page and notice the page number and count are 999 and 1000, however in the pdf preview the number and count are updated to reflect the actual page and page count.
+
+## Step 4 - Groups and Group Headers
+
+?> TIP: You can see the completed step 3 at /tutorial/index-04.html
+
+Imagine that you want to have a Category header for each category above the category's parts listing.  To accomplish this replace the content in between the div.rp-page-header and div.rp-page-footer with this html:
+
+```
+        <div id="cat1" class="rp-group">
+            <div class="rp-group-header">Category 1</div>
+            <p>First page content for category 1</p>
+            <div class="rp-force-page-break"></div>
+            <p>Second page content for category 1</p>
+        </div>
+        <div class="rp-force-page-break"></div>
+        <div id="cat2" class="rp-group">
+            <div class="rp-group-header">Category 2</div>
+            <p>First page content for category 2</p>
+            <div class="rp-force-page-break"></div>
+            <p>Second page content for category 2</p>
+        </div>
+
+```
+
+If you wanted a visual indication that there are more than 1 page for a group you can use the 'rp-hide-on-first-page' class. Here's a new version of the code which shows a "Continued" label on all but the first page for a given group:
+
+```
+        <div id="cat1" class="rp-group">
+            <div class="rp-group-header">Category 1<span class="rp-hide-on-first-page"> - Continued</span></div>
+            <p>First page content for category 1</p>
+            <div class="rp-force-page-break"></div>
+            <p>Second page content for category 1</p>
+        </div>
+        <div class="rp-force-page-break"></div>
+        <div id="cat2" class="rp-group">
+            <div class="rp-group-header">Category 2<span class="rp-hide-on-first-page"> - Continued</span></div>
+            <p>First page content for category 2</p>
+            <div class="rp-force-page-break"></div>
+            <p>Second page content for category 2</p>
+        </div>
+```
+Groups can be nested as deep you want (e.g. a div.rp-group can contain many div.rp-groups, etc. )
+
+!> IMPORTANT: The rp-group-header element MUST be a direct child of the rp-group element
+
+## Step 5 - Table of Contents
+
+?> TIP: You can see the completed step 3 at /tutorial/index-05.html
+
+To add a table of contents, add the following html before the div.rp-page-header element (we'll clean up the styling at the end of the tutorial):
+
+```
+          <div>
+            <a href="#cat1">
+              <span>Category 1 - Page </span> <span class="rp-id-page-number" data-id="cat1">1</span>
+            </a>
+          </div>
+          <div>
+            <a href="#cat2">
+              <span>Category 2 - Page </span> <span class="rp-id-page-number" data-id="cat2">1</span>
+            </a>
+          </div>
+```
