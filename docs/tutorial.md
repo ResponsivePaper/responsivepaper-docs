@@ -185,14 +185,24 @@ Groups can be nested as deep you want (e.g. a div.rp-group can contain many div.
 To add a table of contents, add the following html before the div.rp-page-header element (we'll clean up the styling at the end of the tutorial):
 
 ```
-          <div>
+        <h3>Table of Contents</h3>
+        <div>
             <a href="#cat1">
-              <span>Category 1 - Page </span> <span class="rp-id-page-number" data-id="cat1">1</span>
+                <span>Category 1 - Page </span> <span class="rp-id-page-number" data-id="cat1">1</span>
             </a>
-          </div>
-          <div>
+        </div>
+        <div>
             <a href="#cat2">
-              <span>Category 2 - Page </span> <span class="rp-id-page-number" data-id="cat2">1</span>
+                <span>Category 2 - Page </span> <span class="rp-id-page-number" data-id="cat2">1</span>
             </a>
-          </div>
+        </div>
+        <div class="rp-force-page-break"></div>
+```
+
+Now, take a look at the html page in the browser and the pdf preview and notice how the pdf engine has replaced the page numbers in the TOC.  This technique can also be used for indexes or cross page referencing.  For example if you wanted to reference Category 1 from some content in Category 2 you could add this to the Category 2 section:
+
+```
+For more information on Category 1, please see page
+                <a href="#cat1"><span class="rp-id-page-number" data-id="cat1">1</span></a>
+
 ```
