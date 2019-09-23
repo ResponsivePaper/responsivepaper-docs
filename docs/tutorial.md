@@ -136,7 +136,7 @@ Take a look at the html page and notice the page number and count are 999 and 10
 
 ## Step 4 - Groups and Group Headers
 
-?> TIP: You can see the completed step 3 at /tutorial/index-04.html
+?> TIP: You can see the completed step 4 at /tutorial/index-04.html
 
 Imagine that you want to have a Category header for each category above the category's parts listing.  To accomplish this replace the content in between the div.rp-page-header and div.rp-page-footer with this html:
 
@@ -180,7 +180,7 @@ Groups can be nested as deep you want (e.g. a div.rp-group can contain many div.
 
 ## Step 5 - Table of Contents
 
-?> TIP: You can see the completed step 3 at /tutorial/index-05.html
+?> TIP: You can see the completed step 5 at /tutorial/index-05.html
 
 To add a table of contents, add the following html before the div.rp-page-header element (we'll clean up the styling at the end of the tutorial):
 
@@ -206,3 +206,156 @@ For more information on Category 1, please see page
                 <a href="#cat1"><span class="rp-id-page-number" data-id="cat1">1</span></a>
 
 ```
+
+## Step 6 - Cover pages (full page without headers and footers)
+
+?> TIP: You can see the completed step 6 at /tutorial/index-06.html
+
+Using the rp-full-page and rp-contain classes it is possible to hide the headers and footers for a given page and create nice looking cover pages or full page graphic sections for your reports.  Try adding the following html before the table of contents section:
+
+```
+        <div class="cover rp-full-page rp-contain">
+            <div class="cover-content">
+                <img src="images/logo.png" />
+                <h2>
+                    PRODUCT CATALOG
+                </h2>
+            </div>
+        </div>
+```
+
+And the following to the head section:
+
+```
+        <style>
+            /* Inlining style for instruction purposes only*/
+            .cover {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: url("images/ocean.jpg") no-repeat center 35%;
+                background-size: auto 90%;
+            }
+
+            .cover-content h2 {
+                padding: 20px;
+            }
+
+            .cover-content img {
+                width: 100%
+            }
+        </style>
+```
+
+You should now see the html and pdf previews updated with the cover page.
+
+
+## Step 7 - Waiting for Dynamic Content
+
+?> TIP: You can see the completed step 7 at /tutorial/index-07.html
+
+Up to this point in the tutorial we've only been loading static content into the page. There are times when you may want to load external data and inject it into your report. For example from a CMS or external api.  Or you may want to generate some charts and inject them into the page. In this section we'll use vue.js templating to render actual product data from the data.json included with the tutorial.
+
+First replace the div#cat1 and div#cat2 elements (all the contents between the div.rp-page-header and div.rp-page.footer elements) with the following html:
+
+```
+        <!-- STEP 7: Dynamic data -->
+        <div v-for="(cat,index) in categories">
+            <div v-if="index !== 0" class="rp-force-page-break"></div>
+            <div v-bind:id="'cat' + cat.categoryID" class="rp-group">
+                <h2 class="rp-group-header">{{cat.categoryName}}<span class="rp-hide-on-first-page"> -
+                        Continued</span></h2>
+                <table class="rp-group">
+                    <thead class="rp-group-header">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>In Stock Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="p in cat.products">
+                            <td>{{p.productName}}</td>
+                            <td>{{p.unitPrice}}</td>
+                            <td>{{p.unitsInStock}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+```
+
+Then add the following script references to the bottom of the page:
+
+```
+    <script src="/lib/vue.js"></script>
+    <script src="index.js"></script>
+
+
+```
+
+?> NOTE: The example data has some duplicate data in order to demonstrate groups spanning multiple pages.
+
+Notice that the html preview shows many lines of product data but the pdf preview doesn't show any product data, just the cover page and the table of contents.  The Responsive Paper service has rendered the pdf before the page's javascript was finished loading data into the html.  To fix this, open the responsive-paper.settings.js file and update the following settings to true:
+
+```
+
+  includeConsole: true,
+  waitForReadyToRender: true,
+
+```
+
+Open the /tutorial/index.js file in your editor and you'll see that the script has set window.RESPONSIVE_PAPER_READY_TO_RENDER = true after the code to render the vue template:
+
+```
+var vm = new ViewModel()
+vm.init().then(() => {
+  var app = new Vue({
+    el: '#rpReport',
+    data: {
+      categories: vm.categories
+    }
+  })
+  window.RESPONSIVE_PAPER_READY_TO_RENDER = true
+})
+
+```
+
+Now, take a look at the pdf preview and you'll see the data rendered correctly. Also, because we set includeConsole = true in the settings, the Responsive Paper has added a page to the report containing the console captured during rendering on the server. This can be very helpful for debugging purposes.
+
+## Step 8 - Finishing touches & Next Steps
+
+?> TIP: You can see the completed step 8 at /tutorial/index-08.html
+
+Let's fix up the TOC to use vue rendering so it not hardcoded to Category 1 and 2:
+
+```
+
+<!--STEP 8: Updated Table of contents-->
+<div class="rp-force-page-break"></div>
+<div class="toc">
+    <h3>Table of Contents</h3>
+    <ul class="toc-content">
+        <li v-for="cat in categories">
+            <a :href="'#cat' + cat.categoryID">
+                <span class="toc-heading">{{cat.categoryName}}</span><span
+                    class="rp-id-page-number toc-page-number" :data-id="'cat' + cat.categoryID">1</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="rp-force-page-break"></div>
+
+
+```
+
+Change the styles reference to main-08.css which contains a little formatting to clean up the report:
+
+```
+    <link rel="stylesheet" href="main-08.css" />
+
+
+```
+
+To learn more please review the [examples](/examples), [CSS](/css-reference) and [API](api-reference) reference, or move on the [Deployment Guide](/deployment).

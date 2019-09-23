@@ -1,8 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [Introduction](/readme.md)
-* [Getting Started](/getting-started.md)
-* [Tutorial](/tutorial.md)
+* [Getting Started](/getting-started.md?id=getting-started)
+* [Tutorial](/tutorial.md?id=tutorial)
 * Examples
   * [Invoice](/invoice.md)
 * Reference
