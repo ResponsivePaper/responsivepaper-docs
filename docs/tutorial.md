@@ -10,7 +10,7 @@ This tutorial will guide you through building a simple catalog report. Concepts 
 * Table of Contents
 * Cover page (full page)
 * Fetching dynamic content and debug logs
-
+* Hiding/showing content based on paper size
 
 ## Initial Configuration
 
@@ -326,7 +326,7 @@ vm.init().then(() => {
 
 Now, take a look at the pdf preview and you'll see the data rendered correctly. Also, because we set includeConsole = true in the settings, the Responsive Paper has added a page to the report containing the console captured during rendering on the server. This can be very helpful for debugging purposes.
 
-## Step 8 - Cleaning up
+## Step 8 - Table of Contents v2
 
 ?> TIP: You can see the completed step 8 at /tutorial/index-08.html
 
@@ -358,14 +358,14 @@ Change the styles reference to main-08.css which contains a little formatting to
     <link rel="stylesheet" href="main-08.css" />
 ```
 
-## Step 9 - Changing Content Based on Paper Size
+## Step 9 - Hiding/Showing Content Based on Paper Size
 
 ?> TIP: You can see the completed step 9 at /tutorial/index-09.html
 
 Let's say you think the report is too cluttered printing on letter size paper in portrait mode but ok in landscape mode.  One solution would be to hide the "Quantity Per Unit" column if the report was generated to letter in landscape mode or wider. To accomplish this, add a style link in the head section to the responsive-paper-sizes.min.css:
 
 ```
-<link href='https://www.responsive-paper.com/utils/responsive-paper-sizes.min.css' rel='stylesheet' type='text/css'>
+<link href='https://www.responsivepaper.com/utils/responsive-paper-sizes.css' rel='stylesheet' type='text/css'>
 
 ```
 
@@ -385,7 +385,7 @@ Preview the report and you'll see the QuantityPerUnit column is hidden in portra
 
 ```
 
-The Quantity Per Unit column is now visible.
+The Quantity Per Unit column is now visible.  See the [rp-visible-*]() and [rp-hidden-*]() reference sections for more information on the "responsive" paper size classes.
 
 
 
