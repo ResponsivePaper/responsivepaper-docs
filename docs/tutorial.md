@@ -270,14 +270,16 @@ First replace the div#cat1 and div#cat2 elements (all the contents between the d
                         <tr>
                             <th>Product Name</th>
                             <th>Price</th>
-                            <th>In Stock Qty</th>
+                            <th class="colQuantityPerUnit">Quantity Per Unit</th>
+                            <th class="colUnitsInStock">In Stock Qty</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="p in cat.products">
                             <td>{{p.productName}}</td>
                             <td>{{p.unitPrice}}</td>
-                            <td>{{p.unitsInStock}}</td>
+                            <td class="colQuantityPerUnit">{{p.quantityPerUnit}}</th>
+                            <td class="colUnitsInStock">{{p.unitsInStock}}</td>
 
                         </tr>
                     </tbody>
@@ -324,7 +326,7 @@ vm.init().then(() => {
 
 Now, take a look at the pdf preview and you'll see the data rendered correctly. Also, because we set includeConsole = true in the settings, the Responsive Paper has added a page to the report containing the console captured during rendering on the server. This can be very helpful for debugging purposes.
 
-## Step 8 - Finishing touches & Next Steps
+## Step 8 - Cleaning up
 
 ?> TIP: You can see the completed step 8 at /tutorial/index-08.html
 
@@ -354,8 +356,37 @@ Change the styles reference to main-08.css which contains a little formatting to
 
 ```
     <link rel="stylesheet" href="main-08.css" />
+```
 
+## Step 9 - Changing Content Based on Paper Size
+
+?> TIP: You can see the completed step 9 at /tutorial/index-09.html
+
+Let's say you think the report is too cluttered printing on letter size paper in portrait mode but ok in landscape mode.  One solution would be to hide the "Quantity Per Unit" column if the report was generated to letter in landscape mode or wider. To accomplish this, add a style link in the head section to the responsive-paper-sizes.min.css:
 
 ```
+<link href='https://www.responsive-paper.com/utils/responsive-paper-sizes.min.css' rel='stylesheet' type='text/css'>
+
+```
+
+And update the th and td elements to reference the responsive classes:
+
+```
+<th class="rp-visible-letter-ls colQuantityPerUnit">Quantity Per Unit</th>
+
+<td class="rp-visible-letter-ls colQuantityPerUnit">{{p.quantityPerUnit}}</th>
+
+```
+
+Preview the report and you'll see the QuantityPerUnit column is hidden in portrait mode.  Now change the default report paper size:
+
+```
+    <div class="rp-page rp-ps-letter-ls" id="rpReport">
+
+```
+
+The Quantity Per Unit column is now visible.
+
+
 
 To learn more please review the [examples](/examples), [CSS](/css-reference) and [API](api-reference) reference, or move on the [Deployment Guide](/deployment).

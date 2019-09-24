@@ -21,4 +21,3 @@ frameworks provide.
 * Screen or print media type
 * Webfont support
 * Debug logs
-* Can generate password protected pdf files
