@@ -6,7 +6,7 @@ Use the rp-page class to identify the html content that should be parsed into pa
 
 ## rp-ps-* (paper size and orientation)
 
-Use the rp-ps-* classs (e.g. rp-ps-letter, rp-ps-legal, rp-ps-letter-ls, rp-ps-legal-ls) to set the paper size of the pages.
+Use the rp-ps-* classes (e.g. rp-ps-letter, rp-ps-legal, rp-ps-letter-ls, rp-ps-legal-ls) to set the paper size of the pages.
 
 The following paper sizes are supported:
 
@@ -19,6 +19,22 @@ The following paper sizes are supported:
 - a6
 
 If you want landscape orientation then you should append "-ls" to the class name.
+
+## rp-visible-*
+
+Use the rp-visible-* classes (e.g. rp-visible-letter-ls, rp-visible-legal-ls) to control if an element is visible on a given paper width or larger.  You can use this to control what content is displayed if the user requests the pdf conversion on various paper sizes.  Please see the (responsive-paper-sizes.css)[https://www.responsivepaper.com/utils/responsive-paper-sizes.css] for all the available classes.
+
+```
+  <div class="rp-visible-letter-ls">My extra content</div>
+```
+
+## rp-hidden-*
+
+Use the rp-hidden-* classes (e.g. rp-hidden-letter, rp-hidden-ls) to control if an element is hidden on a given paper width or smaller.  You can use this to control what content is displayed if the user requests the pdf conversion on various paper sizes.
+
+```
+  <div class="rp-hidden-letter">My extra content</div>
+```
 
 ## rp-page-header
 
@@ -46,7 +62,59 @@ Use the rp-group-header to reprint an HTML element on subsequent pages of a grou
 
 Use the rp-hide-on-first-page to hide an element on the first page inside a page-header or group-header element
 
+
+## rp-page-number && rp-page-count
+
+An element with the rp-page-number class will have it's innerText replaced by the page number on which it is rendered.  An element having the rp-page-count class will have it's innerText replaced by the total number of pages (excluding the console logs).
+
+```
+ <div style="float: right">Page <span class='rp-page-number'>999</span> of <span
+                    class='rp-page-count'>1000</span></div>
+
+```
+
+## rp-id-page-number
+
+An element with the rp-id-page-number class will have it's innerText replaced by the page number where the element with it's data-id is located. This is useful in table of contents, indexes and cross document page references.
+
+```
+ <span class="rp-id-page-number" data-id="someElementId">1</span>
+<!-- some where else in the report-->
+ <div id="someElementId"></div>
+```
+
 ## rp-hidden
 
 Use the rp-hidden utility class to hide an element when parsing pages and generating the pdf.
 
+## rp-contain
+
+Use the rp-contain utility class to ensure an element will not overflow the rp-page element.
+
+## rp-full-page
+
+Use the rp-full-page utility class to hide the page headers and footers. This is useful for inserting full page graphics in your pdfs.
+
+## rp-hide-page-headers, rp-hide-page-footers
+
+Use the rp-hide-page-headers and rp-hide-page-footers classes to hide either the headers or the footers. This is an alternative to rp-full-page which hides both headers and footers.
+
+## rp-keep-together
+
+Use the rp-keep-together utility class to notify the rendering engine that an element should not be split across pages.
+
+## rp-force-page-break
+
+Use the rp-force-page-break class to force the rendering engine to start a new page
+
+## rp-force-page-break with rp-ps-*, rp-ps-default
+
+Use the rp-force-page-break with a rp-ps-* class to change paper sizes within the same pdf.
+
+```
+<div class="rp-force-page-break rp-ps-letter-ls">
+Some letter landscape content
+<div class="rp-force-page-break rp-ps-default">
+More pages with the default paper format on the rp-page element
+
+```

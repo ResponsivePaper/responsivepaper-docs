@@ -385,7 +385,7 @@ Preview the report and you'll see the QuantityPerUnit column is hidden in portra
 
 ```
 
-The Quantity Per Unit column is now visible.  See the [rp-visible-*]() and [rp-hidden-*]() reference sections for more information on the "responsive" paper size classes.
+The Quantity Per Unit column is now visible.  See the [rp-visible-*](/css-reference?id=rp-visible-) and [rp-hidden-*](/css-reference?id=rp-hidden-) reference sections for more information on the "responsive" paper size classes.
 
 
 
