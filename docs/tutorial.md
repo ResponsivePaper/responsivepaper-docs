@@ -389,4 +389,4 @@ The Quantity Per Unit column is now visible.  See the [rp-visible-*](/css-refere
 
 
 
-To learn more please review the [examples](/examples), [CSS](/css-reference) and [API](api-reference) reference, or move on the [Deployment Guide](/deployment).
+To learn more please review the [examples](/examples), [CSS](/css-reference), or move on the [API and Deployment Guide](/api-and-deployment).
