@@ -55,7 +55,7 @@ In your web browser navigate to http://127.0.0.1:8080/tutorial/index-01.html
 Open the /tutorial/index-01.html file in your editor.
 
 
-The index-01.html includes a div element which has the rp-page and rp-ps-letter classes. The rp-page class identifies the content to be parsed into pdf pages and the optional rp-ps-letter class which sets the page size and orientation.  See the [paper size](/css-reference?id=rp-ps-paper-size-and-orientation) section of the css reference for more info on paper sizes.
+The index-01.html includes a div element which has the `rp-page` and `rp-ps-letter` classes. The `rp-page` class identifies the content to be parsed into pdf pages and the optional `rp-ps-letter` class which sets the page size and orientation.  See the [paper size](/css-reference?id=rp-ps-paper-size-and-orientation) section of the css reference for more info on paper sizes.
 
 ```
     <div class="rp-page rp-ps-letter" id="rpReport">
@@ -93,7 +93,7 @@ Saving index-01.html will automatically update the html and pdf previews.
 
 ?> TIP: You can see the completed step 2 at /tutorial/index-02.html
 
-Replace the content inside the div.rp-page with this content and save the file:
+Replace the content inside the `div.rp-page` with this content and save the file:
 
 ```
         <div class="rp-page-header">
@@ -108,23 +108,23 @@ Replace the content inside the div.rp-page with this content and save the file:
         </div>
 ```
 
-Now compare the rendered html to the pdf.  Notice the page break is rendered as a red bar in the designer view but it generates an actual page break in the rendered pdf. Also the logo and report header are rendered on both pages because they are contained in the div.rp-page-header element. The div.rp-page-footer section is aligned to the bottom of the page.
+Now compare the rendered html to the pdf.  Notice the page break is rendered as a red bar in the designer view but it generates an actual page break in the rendered pdf. Also the logo and report header are rendered on both pages because they are contained in the `div.rp-page-header` element. The `div.rp-page-footer` section is aligned to the bottom of the page.
 
-Try adding the rp-ps-letter-ls to the div.rp-page-break element to cause the rendering engine to switch between page layouts and create a multi format pdf:
+Try adding the `rp-ps-letter-ls` to the `div.rp-page-break` element to cause the rendering engine to switch between page layouts and create a multi format pdf:
 
 ```
         <div class="rp-force-page-break rp-ps-letter-ls"></div>
 ```
 
-?> TIP: The designer css doesn't properly display different page sizes and orientations. For testing set the paper size on the top level rp-page element to test sections of your reports in alternative formats.
+?> TIP: The designer css doesn't properly display different page sizes and orientations. For testing set the paper size on the top level `rp-page` element to test sections of your reports in alternative formats.
 
-?> TIP: Have your users use Adobe Reader for printing pdf files with different page sizes so that the paper is automatically selected from the correct paper tray.  This is not necessary if you are just switching orientation in your reports (e.g. rp-ps-letter and rp-ps-letter-ls)
+?> TIP: Have your users use Adobe Reader for printing pdf files with different page sizes so that the paper is automatically selected from the correct paper tray.  This is not necessary if you are just switching orientation in your reports (e.g. `rp-ps-letter` and `rp-ps-letter-ls`)
 
 ## Step 3 - Page Numbering
 
 ?> TIP: You can see the completed step 3 at /tutorial/index-03.html
 
-Replace the html inside the div.rp-page-footer element with the following:
+Replace the html inside the `div.rp-page-footer` element with the following:
 
 ```
             <div style="float: right">Page <span class='rp-page-number'>999</span> of <span
@@ -138,7 +138,7 @@ Take a look at the html page and notice the page number and count are 999 and 10
 
 ?> TIP: You can see the completed step 4 at /tutorial/index-04.html
 
-Imagine that you want to have a Category header for each category above the category's parts listing.  To accomplish this replace the content in between the div.rp-page-header and div.rp-page-footer with this html:
+Imagine that you want to have a Category header for each category above the category's parts listing.  To accomplish this replace the content in between the `div.rp-page-header` and `div.rp-page-footer` with this html:
 
 ```
         <div id="cat1" class="rp-group">
@@ -174,15 +174,15 @@ If you wanted a visual indication that there are more than 1 page for a group yo
             <p>Second page content for category 2</p>
         </div>
 ```
-Groups can be nested as deep you want (e.g. a div.rp-group can contain many div.rp-groups, etc. )
+Groups can be nested as deep you want (e.g. a `div.rp-group` can contain many `div.rp-groups`, etc. )
 
-!> IMPORTANT: The rp-group-header element MUST be a direct child of the rp-group element
+!> IMPORTANT: The `rp-group-header` element MUST be a direct child of the `rp-group` element
 
 ## Step 5 - Table of Contents
 
 ?> TIP: You can see the completed step 5 at /tutorial/index-05.html
 
-To add a table of contents, add the following html before the div.rp-page-header element (we'll clean up the styling at the end of the tutorial):
+To add a table of contents, add the following html before the `div.rp-page-header` element (we'll clean up the styling at the end of the tutorial):
 
 ```
         <h3>Table of Contents</h3>
@@ -211,7 +211,7 @@ For more information on Category 1, please see page
 
 ?> TIP: You can see the completed step 6 at /tutorial/index-06.html
 
-Using the rp-full-page and rp-contain classes it is possible to hide the headers and footers for a given page and create nice looking cover pages or full page graphic sections for your reports.  Try adding the following html before the table of contents section:
+Using the `rp-full-page` and `rp-contain` classes it is possible to hide the headers and footers for a given page and create nice looking cover pages or full page graphic sections for your reports.  Try adding the following html before the table of contents section:
 
 ```
         <div class="cover rp-full-page rp-contain">
@@ -256,7 +256,7 @@ You should now see the html and pdf previews updated with the cover page.
 
 Up to this point in the tutorial we've only been loading static content into the page. There are times when you may want to load external data and inject it into your report. For example from a CMS or external api.  Or you may want to generate some charts and inject them into the page. In this section we'll use vue.js templating to render actual product data from the data.json included with the tutorial.
 
-First replace the div#cat1 and div#cat2 elements (all the contents between the div.rp-page-header and div.rp-page.footer elements) with the following html:
+First replace the div#cat1 and div#cat2 elements (all the contents between the `div.rp-page-header` and `div.rp-page.footer` elements) with the following html:
 
 ```
         <!-- STEP 7: Dynamic data -->
