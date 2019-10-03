@@ -9,6 +9,27 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="/docsify/themes/vue.css">
+  <style>
+    div.special_table+table {
+      display: table;
+    }
+
+    div.special_table+table td:nth-child(1) {
+      width: 20%;
+    }
+
+    div.special_table+table td:nth-child(2) {
+      width: 150%;
+    }
+
+    div.special_table+table thead {
+      display: none;
+    }
+
+    div.special_table+table small {
+      color: gray;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,10 +39,12 @@
       name: 'Responsive Paper',
       repo: '',
       loadSidebar: true,
-      subMaxLevel: 2
+      subMaxLevel: 2,
+      search: 'auto'
     }
   </script>
   <script src="/docsify/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 
 </html>
