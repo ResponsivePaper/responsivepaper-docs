@@ -75,7 +75,7 @@ By default the api will return the raw pdf file, however if an error occurs JSON
 
 ```
 
- * `400` - Bad request (see error object for more info)
+ * `400` - Bad request (parameter validation errors, see error object for more info)
  * `401` - Missing api key
  * `402` - Insufficient account balance
  * `403` - Invalid api key

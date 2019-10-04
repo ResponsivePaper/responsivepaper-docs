@@ -22,7 +22,7 @@ If you want landscape orientation then you should append "-ls" to the class name
 
 ## rp-visible-*
 
-Use the `rp-visible-*` classes (e.g. `rp-visible-letter-ls`, `rp-visible-legal-ls`) to control if an element is visible on a given paper width or larger.  You can use this to control what content is displayed if the user requests the pdf conversion on various paper sizes.  Please see the (responsive-paper-sizes.css)[https://www.responsivepaper.com/utils/responsive-paper-sizes.css] for all the available classes.
+Use the `rp-visible-*` classes (e.g. `rp-visible-letter-ls`, `rp-visible-legal-ls`) to control if an element is visible on a given paper width or larger.  You can use this to control what content is displayed if the user requests the pdf conversion on various paper sizes.  Please see the [responsive-paper-sizes.css](https://www.responsivepaper.com/utils/responsive-paper-sizes.css) for all the available classes.
 
 ```
   <div class="rp-visible-letter-ls">My extra content</div>
