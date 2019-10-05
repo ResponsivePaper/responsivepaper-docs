@@ -105,7 +105,7 @@ For POST requests, add the parameters to a JSON or url encoded body.
 
 ### Parameters
 
-!> IMPORTANT: You must supply either the value and apikey parameters. All referenced sources must be publicly accessible.
+!> IMPORTANT: You must supply either the value and apikey parameters. All referenced sources must be publicly accessible.  All boolean parameters default to false.
 
 <div class="special_table"></div>
 
