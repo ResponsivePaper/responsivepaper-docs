@@ -80,6 +80,8 @@ Open responsive-paper.settings.js and update the following to "true":
 
 Save the file and you should see an html preview in the browser tab and a pdf preview open in a new tab.
 
+?> TIP: Be sure to allow pop ups/new tabs for your testing url so the pdf preview opens correctly in a new tab.
+
 Try changing the paper size and layout by updating the index-01.html:
 
 ```
