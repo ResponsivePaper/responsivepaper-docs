@@ -119,7 +119,8 @@ For POST requests, add the parameters to a JSON or url encoded body.
 | format<br><small>string</small> | Set to override the default paper size as set on the rp-page element<br><small>**Example:** Legal [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | landscape<br><small>boolean</small> | Set to 'true' override the default page orientation as set on the rp-page element [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | printMedia<br><small>boolean</small> | If falsy, `emulateMedia: screen` is passed to headless chrome, otherwise `emulateMedia: print` is passed.</small> |
-| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms).</small> |
+| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms). Default: 10000, Minimum: 600</small> |
+| imageTimeout<br><small>integer</small> | Length of time to wait for images to load (ms). 0: don't wait for images, Default: timeout</small> |
 
 
 
