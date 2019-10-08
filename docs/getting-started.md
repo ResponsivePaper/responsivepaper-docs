@@ -31,6 +31,8 @@ Your HTML reports are converted to PDF's using the responsivepaper.com service. 
 npm install -g localtunnel
 ```
 
+?> TIP: At the time of this writing, localtunnel v2.0.0 had limited support for accessing local web servers over https.  If you need to access your local testing server over https you can try the more fully featured [ngrok](https://ngrok.com/download) (fremium).
+
 If you don't have a local web server installed, install one using:
 
 ```

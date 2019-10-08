@@ -87,6 +87,10 @@ An element with the `rp-id-page-number` class will have it's innerText replaced 
 
 Use the `rp-hidden` utility class to hide an element when parsing pages and generating the pdf.  This could be useful if an element such as a "Print to PDF" button is contained inside the `rp-page` element and you don't want it to print on the pdf.
 
+## rp-visible
+
+Use the `rp-visible` utility class to show an element when parsing pages and generating the pdf.  This could be useful if you want to use a web page for both online viewing and pdf conversion but you don't want certain elements to show (e.g. `rp-page-number`) when viewing the html version.
+
 ## rp-contain
 
 Use the `rp-contain` utility class to ensure an element will not overflow the `rp-page` element.
