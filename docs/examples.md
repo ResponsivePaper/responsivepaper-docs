@@ -26,3 +26,12 @@ This example is based on a [Stock Report example](https://playground.jsreport.ne
 
 * [Form based conversion](https://responsivepaper.com/convert?url=https://examples.responsivepaper.com/stocks&waitForReadyToRender=true&includeConsole=true) (Login required)
 * [HTML preview](https://examples.responsivepaper.com/stocks)
+
+## Node Deployment
+
+Please see the code [here](https://github.com/ResponsivePaper/responsivepaper-examples/tree/master/deployment/node)
+
+## ASP.NET Core Deployment
+
+Please see the code [here](https://github.com/ResponsivePaper/responsivepaper-examples/tree/master/deployment/dotnet)
+

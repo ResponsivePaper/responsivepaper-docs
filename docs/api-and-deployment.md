@@ -57,7 +57,7 @@ http.createServer(async function (req, res) {
 }).listen(8080)
 ```
 
-Please see the deployment folder in the [examples repository](https://github.com/ResponsivePaper/responsivepaper-examples) for more implementation examples.
+Please see the deployment folder in the [examples repository](https://github.com/ResponsivePaper/responsivepaper-examples/tree/master/deployment) for more implementation examples.
 
 
 ## Testing UI
