@@ -174,9 +174,20 @@ The `rp-render` class will be added to every `rp-page` element as the html is pa
 }
 ```
 
+Alternatively you could call the api with `printMedia = true` and add a `@media print` css rule:
+
+```
+@media print {
+  .my-narrow-list {
+    width: 100%
+  }
+}
+
+```
+
 ## rp-pdf
 
-The `rp-pdf` class will be added to the `rp-page` parent element after html is parsed into pages. You can use this to apply different styling after parsing but before the pdf is generated, for example to handle the chrome screen media bug:
+The `rp-pdf` class will be added to the `rp-page` parent element after html is parsed into pages. You can use this to apply different styling after parsing but before the pdf is generated, for example to handle the chrome screen media printing bug:
 
 ```
 @media (min-width: 612px) {
@@ -186,5 +197,7 @@ The `rp-pdf` class will be added to the `rp-page` parent element after html is p
 }
 ```
 
-Please see the [bootstrap3-to-pdf.css](https://www.responsivepaper.com/utils/bootstrap3-to-pdf.css) for a complete fix for bootstrap 3 rendering issues.
+Please see the [bootstrap3-to-pdf.css](https://www.responsivepaper.com/utils/bootstrap3-to-pdf.css) for a fixes for bootstrap 3 screen media rendering issues.
+
+Alternatively, you can all the api with `fixScreenMedia = true` and `printMedia = false`.
 

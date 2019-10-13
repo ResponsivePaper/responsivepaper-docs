@@ -107,6 +107,12 @@ For POST requests, add the parameters to a JSON or url encoded body.
 
 !> IMPORTANT: You must supply either the value and apikey parameters. All referenced sources must be publicly accessible.  All boolean parameters default to false.
 
+?> TIP: If you post html instead of a url for the `value` parameter,  you can set the `base` element in the `head` section so that the Responsive Paper service can resolve relative urls.
+
+```
+<base href="https://5c555dec.ngrok.io/">
+```
+
 <div class="special_table"></div>
 
 |   []() | |

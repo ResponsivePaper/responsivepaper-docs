@@ -1,6 +1,7 @@
 # Introduction
 
-The Responsive Paper HTML to PDF API is an easy to use web service that renders web pages annotated with the [Responsive Paper CSS classes](/css-reference) and delivers the paginated view as a PDF document. The service utilizes the headless chrome browser rendering engine incorporating the latest rich html / css / js capabilities.
+The Responsive Paper HTML
+to PDF API is an easy to use web service that renders web pages annotated with the [Responsive Paper CSS classes](css-reference?id=css-reference) and delivers the paginated view as a PDF document. The service utilizes the headless chrome browser rendering engine incorporating the latest rich html / css / js capabilities.
 
 * Create pdf reports using your favorite client side html/js/css framework (e.g. Vue, React, etc)
 * Use the latest css technologies and retain reprinting headers without using `<th>` tags and print media queries
