@@ -62,7 +62,7 @@ Please see the deployment folder in the [examples repository](https://github.com
 
 ## Testing UI
 
-You can also test publicly accessible or [tunneled](/getting-started?id=install-localtunnel-for-design-time-testing) urls, or html, using the [online converter tool](https://www.responsivepaper.com/convert)
+You can also test publicly accessible or [tunneled](/getting-started?id=install-tunnel-software) urls, or html, using the [online converter tool](https://www.responsivepaper.com/convert)
 
 ![Convert UI](convert-ui.png)
 
@@ -97,7 +97,7 @@ If the request is successful the consoleLogs will be displayed on the last page 
 
 Invoke a GET or POST request on the following URL:
 
-https://www.responsivepaper.com/convert/api/html2pdf/v2
+https://www.responsivepaper.com/api/html2pdf/v2
 
 For GET requests, add the parameters to the query string.
 
@@ -125,9 +125,9 @@ For POST requests, add the parameters to a JSON or url encoded body.
 | format<br><small>string</small> | Set to override the default paper size as set on the rp-page element<br><small>**Example:** Legal [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | landscape<br><small>boolean</small> | Set to 'true' override the default page orientation as set on the rp-page element [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | printMedia<br><small>boolean</small> | If falsy, `emulateMedia: screen` is passed to headless chrome, otherwise `emulateMedia: print` is passed.</small> |
-| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms). Default: 10000, Minimum: 600</small> |
-| imageTimeout<br><small>integer</small> | Length of time to wait for images to load (ms). 0: don't wait for images, Default: timeout</small> |
-
+| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms). Default: 10000, Minimum: 600 |
+| imageTimeout<br><small>integer</small> | Length of time to wait for images to load (ms). 0: don't wait for images, Default: timeout |
+| version<br><small>string</small> | Version of the server side rendering engine, defaults to blank which uses latest engine<br><small>**Example:** 0.1.1</small> |
 
 
 
