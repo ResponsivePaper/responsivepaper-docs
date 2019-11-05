@@ -80,7 +80,7 @@ By default the api will return the raw pdf file, however if an error occurs JSON
  * `402` - Insufficient account balance
  * `403` - Invalid api key
  * `429` - Too Many Requests (exceeded the plan's concurrency or request limit)
- * `500` - Javascript rendering error (see error and consoleLogs objects for more info)
+ * `500` - Timeout or javascript rendering error (see error and consoleLogs objects for more info)
 
 The consoleLogs contain messages including:
 
@@ -121,11 +121,11 @@ For POST requests, add the parameters to a JSON or url encoded body.
 | apikey*<br><small>string</small> | Your api key listed on your [dashboard](https://www.responsivepaper.com/user/dashboard) |
 | waitForReadyToRender<br><small>bool</small> | Set to `true` if the page needs to perform async operations before the HTML parsing should start. In this case the page should set `window.RESPONSIVE_PAPER_READY_TO_RENDER = true`
 | disableCache<br><small>bool</small> | Set to `true` to load all requests over the network |
-| includeConsole<br><small>bool</small> | Set to `true` to write console messages to the last page of the pdf |
+| includeConsole<br><small>bool</small> | Set to `true` to write console messages to the last page of the pdf, `includeConsole = true` is enforced for free plans |
 | format<br><small>string</small> | Set to override the default paper size as set on the rp-page element<br><small>**Example:** Legal [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | landscape<br><small>boolean</small> | Set to 'true' override the default page orientation as set on the rp-page element [CSS Ref](/css-reference?id=rp-ps-paper-size-and-orientation)</small> |
 | printMedia<br><small>boolean</small> | If falsy, `emulateMedia: screen` is passed to headless chrome, otherwise `emulateMedia: print` is passed.</small> |
-| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms). Default: 10000, Minimum: 600 |
+| timeout<br><small>integer</small> | Request will abort if page load and rendering exceed the timeout (ms). Default: 40000, Min: 600, Max: 120000 |
 | imageTimeout<br><small>integer</small> | Length of time to wait for images to load (ms). 0: don't wait for images, Default: timeout |
 | version<br><small>string</small> | Version of the server side rendering engine, defaults to blank which uses latest engine<br><small>**Example:** 0.1.1</small> |
 
