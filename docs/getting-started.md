@@ -15,7 +15,7 @@ Here is a visualization of the rendering in a development environment:
 
 ## Create a log in and generate a free developer API key
 
-An API key is required to do html to pdf conversion while you are developing locally.  To get an API key, goto the [sign up](https://responsivepaper.com/user/signup) page and enter your name, email and password and you will be redirected to your [dashboard](https://responsivepaper.com/user/dashboard) where you can view your API key
+An API key is required to do html to pdf conversion while you are developing locally.  To get an API key, goto the [sign up](https://responsivepaper.com/user/register) page and enter your name, email and password and you will be redirected to your [dashboard](https://responsivepaper.com/user/dashboard) where you can view your API key
 
 
 ## Development Environment
