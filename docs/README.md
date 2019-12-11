@@ -1,6 +1,15 @@
 # Introduction
 
-Responsive Paper is a revolutionary way to design and build pdf reports using pure html, javascript, and css. It puts the ease of GUI report design into the hands of you as a developer. The Responsive Paper HTML to PDF API is an easy to use web service that renders web pages annotated with the [Responsive Paper CSS classes](css-reference?id=css-reference) and delivers the paginated view as a PDF document. The service utilizes the headless chrome browser rendering engine incorporating the latest rich html / css / js capabilities.
+Responsive Paper is a revolutionary way to design and build pdf reports using pure html, javascript, and css. It puts the ease of GUI report design into the hands of you as a developer. The Responsive Paper HTML to PDF API is an easy to use web service that renders web pages annotated with the [Responsive Paper CSS classes](css-reference?id=css-reference) and delivers the paginated view as a PDF document.
+
+```
+    <div class="rp-page rp-ps-letter">
+      Your report content here
+    </div>
+
+```
+
+The service utilizes the headless chrome browser rendering engine incorporating the latest rich html / css / js capabilities.
 
 Some of the highlights of Responsive Paper include:
 
