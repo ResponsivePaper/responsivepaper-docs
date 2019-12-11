@@ -129,5 +129,12 @@ For POST requests, add the parameters to a JSON or url encoded body.
 | imageTimeout<br><small>integer</small> | Length of time to wait for images to load (ms). 0: don't wait for images, Default: timeout |
 | version<br><small>string</small> | Version of the server side rendering engine, defaults to blank which uses latest engine<br><small>**Example:** 0.1.1</small> |
 
+## Jsreport Integration
 
+[Jsreport.net](https://jsreport.net/) is a fully featured reporting services platform which can do much more than convert html to pdf. It has support for scheduled delivery of documents including excel, word and pdf files. It is very simple to add responsive paper to jsreport using the jsreport-responsivepaper-pdf node package.
 
+```
+npm install jsreport-responsivepaper-pdf
+```
+
+More information is available at the [jsreport-responsivepaper-pdf](https://github.com/ResponsivePaper/jsreport-responsivepaper-pdf) github repository.
