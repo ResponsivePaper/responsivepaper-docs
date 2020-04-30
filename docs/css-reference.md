@@ -52,6 +52,17 @@ Use the `rp-page-footer` class to make and HTML element print at the bottom of e
   </div>
 ```
 
+## rp-hide-on-last-page
+
+Use the `rp-hide-on-last-page` to hide an element on the last page of the report
+
+```
+  <div class="rp-page-footer">
+     <!--put page footer content here -->
+     <span class="rp-hide-on-last-page">Continued on next page</span>
+  </div>
+```
+
 ## rp-force-page-break
 
 Use the `rp-force-page-break` class to force the rendering engine to start a new page
