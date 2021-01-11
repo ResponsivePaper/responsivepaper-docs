@@ -57,7 +57,7 @@ http.createServer(async function (req, res) {
 }).listen(8080)
 ```
 
-Please see the deployment folder in the [examples repository](https://github.com/ResponsivePaper/responsivepaper-examples/tree/master/deployment) for more implementation examples.
+Please see the deployment folder in the [examples repository](https://github.com/ResponsivePaper/responsivepaper-examples/tree/master/deployment) for more implementation examples.  node/express, asp.net mvc and netlify aws lamba have been implemented.
 
 
 ## Testing UI
